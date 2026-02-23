@@ -1,0 +1,206 @@
+/* ================= SCREEN VIEW ================= */
+
+body{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.resume{
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6); /* paper feel */
+}
+
+/* ---------- TEXT ---------- */
+
+h1{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 45px;
+  margin: 0 0 2px 0;
+}
+
+p{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  margin: 2px 0;
+}
+
+hr{
+  border: 1px solid black;
+  margin: 18px 0;
+}
+
+.priya{
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.contact-info{
+  text-align: left;
+  font-size: 18px;
+}
+
+.about{
+  text-align: justify;
+  font-size: 18px;
+  text-indent: 2em;
+}
+
+h3{
+  text-align: left;
+  font-size: 20px;
+  margin: 8px 0 2px 0;
+}
+
+/* ---------- SKILLS (2 column on screen) ---------- */
+
+.skills-section{
+  display: flex;
+  gap: 40px;
+  margin: 18px 0;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.skills-section div{
+  flex: 1;
+}
+
+.skills-section ul{
+  padding-left: 40px;
+  margin: 0;
+}
+
+/* ---------- PROJECTS ---------- */
+
+.project-list{
+  padding-left: 45px;
+  font-size: 18px;
+  margin: 4px 0 8px 0;
+}
+
+.project-tech{
+  padding-left: 25px;
+  font-size: 18px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+/* ---------- ACHIEVEMENTS ---------- */
+
+.achivements 
+{ 
+    font-size: 18px; 
+    text-align: left; 
+    padding-left: 15px; 
+    font-size: medium; 
+}
+
+
+/* ================= PRINT MODE ================= */
+
+/* Force real A4 paper */
+@page{
+  size: A4;
+  margin: 10mm;
+}
+
+@media print{
+
+  /* keep print clean */
+  body{
+    background: white;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  /* IMPORTANT: remove screen box styling in print */
+  .resume{
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+    box-shadow: none;
+  }
+
+  /* smaller typography for print */
+  h1{
+    font-size: 28px;
+    margin-bottom: 2px;
+  }
+
+  .priya{
+    font-size: 19px;
+    margin: 6px 0 4px 0;
+  }
+
+  h3{
+    font-size: 15px;
+    margin: 5px 0 2px 0;
+  }
+
+  p{
+    margin: 2px 0;
+    line-height: 1.25;
+  }
+
+  li{
+    margin: 2px 0;
+    line-height: 1.25;
+  }
+
+  hr{
+    margin: 8px 0;
+  }
+
+  /* Flexbox breaks printing → convert to block */
+  .skills-section{
+    display: block !important;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .skills-section div{
+    width: 100%;
+  }
+
+  /* tighten list spacing */
+  ul{
+    margin: 2px 0;
+    padding-left: 22px;
+  }
+
+  .project-list{
+    margin: 2px 0 5px 0;
+  }
+
+  .project-tech{
+    margin-bottom: 4px;
+  }
+
+  /* prevent bad page breaks */
+  h2, h3{
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  ul, p{
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .skills-section{
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
